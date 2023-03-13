@@ -7,36 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Base Apparel Coming Soon Page</title>
     <link rel="stylesheet" href="styles-minify.css">
-    <script src="validation.js"></script>
+    <script src="validation.js" defer></script>
 </head>
 
 <body>
     <main class="main">
-        <img class="logo" src="svg/logo.svg" alt="">
         <picture>
-            <source srcset="images/hero-mobile.jpg" media="(max-width: 768px)">
-            <source srcset="images/hero-desktop.jpg" media="(min-width: 768px)">
-            <img class="hero" src="images/hero-mobile.jpg" alt="girl">
+            <source srcset="images/hero-desktop.jpg" media="(min-width: 1024px)">
+            <img class="girl-desktop" src="images/hero-desktop.jpg" alt="girl">
         </picture>
-        <div class="content">
-            <h1 class="title"><span>we're</span><br>coming<br>soon</h1>
-            <p>Hello follow shoppers! We're currently building our new fashion store. Add your email below to stay up to
-                date with announcements and our launch deals.</p>
-            <form action="" class="form">
-                <input class="email" type="email" name="email" id="inputEmail" placeholder="email address" required>
-                <svg class="arrow-error" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                    <g fill="none" fill-rule="evenodd">
-                        <circle cx="12" cy="12" r="12" fill="#F96464" />
-                        <path fill="#FFF" fill-rule="nonzero"
-                            d="M13.256 6v9.056h-2V6h2zm-.944 12.464c-.384 0-.699-.104-.944-.312a1.027 1.027 0 0 1-.368-.824c0-.33.125-.608.376-.832.25-.224.563-.336.936-.336.373 0 .68.112.92.336.24.224.36.501.36.832 0 .341-.117.616-.352.824-.235.208-.544.312-.928.312z" />
-                    </g>
-                </svg>
-                <button type="submit" class="btn-submit">
-                    <svg class="arrow-submit" xmlns="http://www.w3.org/2000/svg" width="12" height="20">
-                        <path fill="none" stroke="#FFF" stroke-width="2" d="M1 1l8.836 8.836L1 18.671" />
+        <div class="block">
+            <img class="logo" src="svg/logo.svg" alt="">
+            <picture>
+                <source srcset="images/hero-mobile.jpg" media="(max-width: 1023px)">
+                <img class="girl-mobile" src="images/hero-mobile.jpg" alt="girl">
+            </picture>
+            <div class="content">
+                <h1 class="title"><span>we're</span><br>coming<br>soon</h1>
+                <p>Hello follow shoppers! We're currently building our new fashion store. Add your email below to stay
+                    up-to-date with announcements and our launch deals.</p>
+                <form action="" class="form" id="form">
+                    <input class="email" type="email" name="email" id="inputEmail" placeholder="email address" required>
+                    <svg id="arrow-error" class="arrow-error" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <g fill="none" fill-rule="evenodd">
+                            <circle cx="12" cy="12" r="12" fill="#F96464" />
+                            <path fill="#FFF" fill-rule="nonzero"
+                                d="M13.256 6v9.056h-2V6h2zm-.944 12.464c-.384 0-.699-.104-.944-.312a1.027 1.027 0 0 1-.368-.824c0-.33.125-.608.376-.832.25-.224.563-.336.936-.336.373 0 .68.112.92.336.24.224.36.501.36.832 0 .341-.117.616-.352.824-.235.208-.544.312-.928.312z" />
+                        </g>
                     </svg>
-                </button>
-            </form>
+                    <button id="btn-submit" type="submit" class="btn-submit">
+                        <svg class="arrow-submit" xmlns="http://www.w3.org/2000/svg" width="12" height="20">
+                            <path fill="none" stroke="#FFF" stroke-width="2" d="M1 1l8.836 8.836L1 18.671" />
+                        </svg>
+                    </button>
+                    <input id="message-error" type="text" class="message-error" disabled value="Hello"></input>
+                </form>
+            </div>
         </div>
     </main>
 </body>
