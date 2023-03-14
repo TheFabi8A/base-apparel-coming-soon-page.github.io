@@ -1,20 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
 
-*::before,*,*::after {
+*,*::before,*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     letter-spacing: 0.05rem;
-}
-
-:root {
-    --desaturated-red: hsl(0deg 36% 70%);
-    --soft-red: hsl(0deg 93% 68%);
-    --dark-grayish-red: hsl(0deg 6% 24%);
-
-    /* gradients */
-    --gradient-1: linear-gradient(135deg, hsl(0deg 0% 100%), hsl(0deg 100% 98%));
-    --gradient-2: linear-gradient(135deg, hsl(0deg 80% 86%), hsl(0deg 74% 74%));
 }
 
 html {
@@ -31,6 +21,16 @@ body {
 
 picture {
     line-height: 0;
+}
+
+:root {
+    --desaturated-red: #ce9797;
+    --soft-red: #fa6161;
+    --dark-grayish-red: hsl(0deg 6% 24%);
+
+    /* gradients */
+    --gradient-1: linear-gradient(135deg, hsl(0deg 0% 100%), hsl(0deg 100% 98%));
+    --gradient-2: linear-gradient(135deg, hsl(0deg 80% 86%), hsl(0deg 74% 74%));
 }
 
 .main {
@@ -50,19 +50,6 @@ picture {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5rem;
-}
-
-.title span {
-    color: var(--soft-red);
-    font-weight: 300;
-    letter-spacing: 0.5rem;
-}
-
-.title~p {
-    font-weight: 300;
-    color: var(--soft-red);
-    font-size: 0.85rem;
-    line-height: 1.25rem;
 }
 
 .content {
@@ -100,15 +87,6 @@ picture {
     border: none;
 }
 
-.email::placeholder {
-    text-transform: capitalize;
-    font-weight: 400;
-}
-
-.email:focus {
-    outline: none;
-}
-
 .arrow-error {
     display: none;
 }
@@ -122,11 +100,6 @@ picture {
     height: inherit;
     width: 4.0625rem;
     box-shadow: 0 1rem 2rem -0.3rem var(--desaturated-red);
-}
-
-.btn-submit:hover {
-    cursor: pointer;
-    background: var(--desaturated-red);
 }
 
 .message-error {
@@ -145,6 +118,34 @@ picture {
 
 .view-error {
     display: block;
+}
+
+.title span {
+    color: var(--soft-red);
+    font-weight: 300;
+    letter-spacing: 0.5rem;
+}
+
+.title~p {
+    font-weight: 300;
+    color: var(--soft-red);
+    font-size: 0.85rem;
+    line-height: 1.25rem;
+}
+
+.email::placeholder {
+    text-transform: capitalize;
+    font-weight: 400;
+    color: var(--dark-grayish-red);
+}
+
+.btn-submit:hover {
+    cursor: pointer;
+    background: var(--desaturated-red);
+}
+
+.email:focus {
+    outline: none;
 }
 
 @media screen and (min-width: 69.375rem) {
@@ -182,15 +183,6 @@ picture {
         letter-spacing: 1.15rem;
     }
 
-    .title span {
-        letter-spacing: 1.15rem;
-    }
-
-    .title~p {
-        font-size: 1.065rem;
-        line-height: 1.25rem;
-    }
-
     .btn-submit {
         width: 6.25rem;
     }
@@ -204,5 +196,14 @@ picture {
     .block {
         padding: 4rem 13.75rem 0 10.3125rem;
         padding-bottom: none;
+    }
+
+    .title span {
+        letter-spacing: 1.15rem;
+    }
+
+    .title~p {
+        font-size: 1.065rem;
+        line-height: 1.25rem;
     }
 }

@@ -1,8 +1,8 @@
-const formulario = document.getElementById('form');
-const inputs = document.querySelectorAll('#form input');
-let messageError = document.getElementById('message-error');
+const formulario = document.getElementById('form')
+const inputs = document.querySelectorAll('#form input')
+let messageError = document.getElementById('message-error')
 let arrowError = document.getElementById('arrow-error')
-let btnSubmit = document.getElementById('btn-submit');
+let btnSubmit = document.getElementById('btn-submit')
 
 const expresiones = {
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
@@ -21,41 +21,46 @@ const campos = {
 
 const validarCampo = (expresion, input, campo) => {
     if (expresion.test(input.value)) {
-        messageError.classList.remove('view-error');
-        messageError.setAttribute('value', 'ASDASDASDASD');
-        campos[campo] = true;
+        messageError.classList.remove('view-error')
+        messageError.setAttribute('value', '')
+        arrowError.classList.remove('view-error')
+        campos[campo] = true
+        formulario.style.border = '0.1rem solid #ce9797'
     } else {
-        messageError.classList.add('view-error');
+        formulario.style.border = '0.1rem solid #fa6161'
+        messageError.classList.add('view-error')
         arrowError.classList.add('view-error')
-        messageError.setAttribute('value', 'Please provide a valid email');
-        campos[campo] = false;
+        messageError.setAttribute('value', 'Please provide a valid email')
+        campos[campo] = false
     }
 
-    // if (input.value.length == 0) {
-    //     messageError.classList.add('view-error');
-    //     messageError.setAttribute('value', 'Please provide a email')
-    // }
+    if (input.value.length == 0) {
+        formulario.style.border = '0.1rem solid #fa6161'
+        messageError.classList.add('view-error')
+        messageError.setAttribute('value', 'Please provide a email')
+    }
 
     btnSubmit.addEventListener('click', () => {
         if (input.value.length == 0) {
-            messageError.classList.add('view-error');
-            messageError.setAttribute('value', 'Please provide a email');
+            formulario.style.border = '0.1rem solid #fa6161'
+            messageError.classList.add('view-error')
+            messageError.setAttribute('value', 'Please provide a email')
         }
-    });
+    })
 }
 
 inputs.forEach((input) => {
-    input.addEventListener('keyup', validarFormulario);
-    input.addEventListener('blur', validarFormulario);
-});
+    input.addEventListener('keyup', validarFormulario)
+    input.addEventListener('blur', validarFormulario)
+})
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (campos.correo = true) {
-        formulario.reset();
+        formulario.reset()
         setTimeout(() => {
-        }, 5000);
+        }, 5000)
     } else {
     }
-});
+})
